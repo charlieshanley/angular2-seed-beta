@@ -4,6 +4,7 @@ import {AuthorsComponent} from './authors.component';
 import {FavstarComponent} from './favstar.component';
 import {LikeComponent} from './like.component';
 import {VoterComponent} from './voter.component';
+import {ZippyComponent} from './zippy.component';
 
 @Component({
     selector: 'my-app',
@@ -23,8 +24,20 @@ import {VoterComponent} from './voter.component';
         [isFavorite]="post.isFavorite"
         (favorite-change)="onFavoriteChange($event)">
     </favstar>
+
+    <zippy [title]="'Herr ve hev ze title.'">
+        Und herr ve hev ze content.
+    </zippy>
+    <zippy [title]="'Mespilus germanica'">
+        The medlar was once a common garden fruit, but is not commonly grown today.
+    </zippy>
     `,
-    directives: [VoterComponent, LikeComponent, FavstarComponent]
+    directives: [
+        VoterComponent,
+        LikeComponent,
+        FavstarComponent,
+        ZippyComponent
+    ]
 })
 export class AppComponent {
     post = {
