@@ -5,6 +5,8 @@ import {FavstarComponent} from './favstar.component';
 import {LikeComponent} from './like.component';
 import {VoterComponent} from './voter.component';
 import {ZippyComponent} from './zippy.component';
+import {ContactFormComponent} from './contact-form.component';
+import {SubscriptionFormComponent} from './subscription-form.component';
 
 @Component({
     selector: 'my-app',
@@ -25,18 +27,24 @@ import {ZippyComponent} from './zippy.component';
         (favorite-change)="onFavoriteChange($event)">
     </favstar>
 
-    <zippy [title]="'Herr ve hev ze title.'">
-        Und herr ve hev ze content.
+    <zippy [title]="'Diospyros virginiana'">
+        Compared with the kaki persimmon, the American persimmon is smaller and of richer flavor.
     </zippy>
     <zippy [title]="'Mespilus germanica'">
-        The medlar was once a common garden fruit, but is not commonly grown today.
+        The medlar was once a common garden fruit in Europe, but is not commonly grown today.
     </zippy>
+
+    <contact-form></contact-form>
+
+    <subscription-form></subscription-form>
     `,
     directives: [
         VoterComponent,
         LikeComponent,
         FavstarComponent,
-        ZippyComponent
+        ZippyComponent,
+        ContactFormComponent,
+        SubscriptionFormComponent
     ]
 })
 export class AppComponent {

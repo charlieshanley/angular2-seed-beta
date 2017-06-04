@@ -1,0 +1,83 @@
+<form #f="ngForm" (submit)="onSubmit(f.form)">
+
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input
+            type="text"
+            ngControl="name"
+            #name="ngForm"
+            id="name"
+            class="form-control"
+            required
+            minlength="3"
+        >
+        <div  *ngIf="name.touched && name.errors">
+            <div
+                *ngIf="name.errors.required"
+                class="alert alert-danger">
+                Name is required.
+            </div>
+            <div
+                *ngIf="name.errors.minlength"
+                class="alert alert-danger">
+                First name should be {{name.errors.minlength.requiredLength}} characters or longer.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input
+            type="text"
+            ngControl="email"
+            #email="ngForm"
+            id="name"
+            class="form-control"
+            required
+            minlength="3"
+        >
+        <div *ngIf="email.touched && email.errors">
+            <div
+                *ngIf="email.errors.required"
+                class="alert alert-danger">
+                Email is required.
+            </div>
+            <div
+                *ngIf="email.errors.minlength"
+                class="alert alert-danger">
+                Email should be {{email.errors.minlength.requiredLength}} characters or longer.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="frequency">Frequency of contact</label>
+        <select
+            type="text"
+            ngControl="frequency"
+            #frequency="ngForm"
+            id="frequency"
+            class="form-control"
+            required>
+            <option *ngFor="#opt of frequency_options"> {{ opt }} </option>
+        </select>
+        <div *ngIf="frequency.touched && frequency.errors">
+            <div
+                *ngIf="frequency.errors.required"
+                class="alert alert-danger">
+                Frequency is required.
+            </div>
+        </div>
+    </div>
+
+
+    <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!f.valid">
+        Submit
+    </button>
+</form>
